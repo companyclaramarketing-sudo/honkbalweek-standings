@@ -2,35 +2,46 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 (async () => {
+  console.log("🚀 Scraper gestart");
+
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage'
+    ]
   });
 
   const page = await browser.newPage();
+
+  console.log("📡 Pagina laden...");
 
   await page.goto(
     'https://stats.knbsbstats.nl/en/events/2026-honkbalweek-haarlem/standings',
     { waitUntil: 'networkidle2', timeout: 60000 }
   );
 
-  // Wacht expliciet tot de standings tabel er is
-  await page.waitForSelector('.standings-print', { timeout: 30000 });
+  console.log("⏳ Wachten op tabel...");
+
+  await page.waitForSelector('.standings-print', { timeout: 60000 });
+
+  await page.waitForTimeout(3000);
+
+  console.log("📊 Data extraheren...");
 
   const result = await page.evaluate(() => {
     const table = document.querySelector('.standings-print');
-
     const rows = table?.querySelectorAll('tbody tr') || [];
 
     const standings = [...rows].map(row => {
       const cols = row.querySelectorAll('td');
 
-      // soms lege rows of separators
-      if (!cols || cols.length < 6) return null;
+      if (cols.length < 6) return null;
 
       return {
-        teamCode: cols[0]?.innerText.trim() || null,
-        team: cols[1]?.innerText.trim() || null,
+        teamCode: cols[0]?.innerText.trim(),
+        team: cols[1]?.innerText.trim(),
         wins: Number(cols[2]?.innerText.trim()) || 0,
         losses: Number(cols[3]?.innerText.trim()) || 0,
         ties: Number(cols[4]?.innerText.trim()) || 0,
@@ -45,9 +56,14 @@ const fs = require('fs');
     };
   });
 
-  fs.writeFileSync('standings.json', JSON.stringify(result, null, 2));
+  console.log("💾 Writing file...");
 
-  console.log('Scrape succesvol:', result);
+  fs.writeFileSync(
+    'standings.json',
+    JSON.stringify(result, null, 2)
+  );
+
+  console.log("✅ Klaar!");
 
   await browser.close();
 })();
