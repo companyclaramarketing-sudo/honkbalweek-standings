@@ -23,34 +23,45 @@ const fs = require('fs');
       { waitUntil: 'domcontentloaded', timeout: 60000 }
     );
 
-    console.log("⏳ Wachten op table (met fallback)...");
+    console.log("⏳ Wachten op tabel...");
 
-    // BETERE WAIT: niet hard crashen als selector traag is
-    await page.waitForFunction(() => {
-      return document.querySelector('.standings-print') !== null;
-    }, { timeout: 60000 });
+    await page.waitForSelector('.standings-print', { timeout: 60000 });
 
-    console.log("📊 Data ophalen...");
+    console.log("📊 Data extraheren...");
 
     const result = await page.evaluate(() => {
       const table = document.querySelector('.standings-print');
-      const rows = table?.querySelectorAll('tbody tr') || [];
 
-      const standings = [...rows].map(row => {
-        const cols = row.querySelectorAll('td');
+      const rows = [...table.querySelectorAll('tbody tr')]
+        .filter(row => row.innerText && row.innerText.trim().length > 0);
 
-        if (cols.length < 6) return null;
+      const standings = [];
 
-        return {
-          teamCode: cols[0]?.innerText.trim(),
-          team: cols[1]?.innerText.trim(),
-          wins: Number(cols[2]?.innerText.trim()) || 0,
-          losses: Number(cols[3]?.innerText.trim()) || 0,
-          ties: Number(cols[4]?.innerText.trim()) || 0,
-          pct: cols[5]?.innerText.trim() || null,
-          gb: cols[6]?.innerText.trim() || null
-        };
-      }).filter(Boolean);
+      for (const row of rows) {
+        const cells = [...row.querySelectorAll('td, th')]
+          .map(c => (c.innerText || '').replace(/\s+/g, ' ').trim());
+
+        // skip lege of header-achtige rijen
+        if (cells.length < 6) continue;
+
+        const teamCode = cells[0];
+        const team = cells[1];
+
+        // skip header/invalid rows
+        if (!team || team.toLowerCase().includes('team') || team.toLowerCase().includes('#')) {
+          continue;
+        }
+
+        standings.push({
+          teamCode: teamCode || null,
+          team: team || null,
+          wins: Number(cells[2]) || 0,
+          losses: Number(cells[3]) || 0,
+          ties: Number(cells[4]) || 0,
+          pct: cells[5] || null,
+          gb: cells[6] || null
+        });
+      }
 
       return {
         updatedAt: new Date().toISOString(),
@@ -58,7 +69,7 @@ const fs = require('fs');
       };
     });
 
-    console.log("💾 Schrijven naar file...");
+    console.log("💾 Writing file...");
 
     fs.writeFileSync(
       'standings.json',
@@ -70,7 +81,6 @@ const fs = require('fs');
   } catch (err) {
     console.error("❌ ERROR:", err);
 
-    // BELANGRIJK: dump debug info zodat je niet blind bent
     fs.writeFileSync(
       'debug.html',
       await page.content()
