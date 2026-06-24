@@ -13,31 +13,21 @@ const fs = require('fs');
     { waitUntil: 'networkidle2', timeout: 30000 }
   );
 
-  await page.waitForSelector('.standings-print', { timeout: 15000 });
+  // Wacht even extra
+  await new Promise(r => setTimeout(r, 5000));
 
-  const standings = await page.evaluate(() => {
-    const rows = document.querySelectorAll('.standings-print tbody tr:not(:first-child)');
-    return Array.from(rows).map((row, i) => {
-      const cells = row.querySelectorAll('td');
-      const vlag = row.querySelector('img')?.src || '';
-      const code = row.querySelector('.team-name')?.childNodes[0]?.textContent?.trim() || '';
-      const naam = row.querySelector('.team-name small')?.innerText?.trim() || '';
-      return {
-        positie: i + 1,
-        code,
-        naam,
-        vlag,
-        w:   cells[3]?.innerText?.trim(),
-        l:   cells[4]?.innerText?.trim(),
-        t:   cells[5]?.innerText?.trim(),
-        pct: cells[6]?.innerText?.trim(),
-        gb:  cells[7]?.innerText?.trim(),
-      };
-    }).filter(r => r.naam);
+  const result = await page.evaluate(() => {
+    const table = document.querySelector('.standings-print');
+    return {
+      tableFound: !!table,
+      tableHTML: table ? table.innerHTML.substring(0, 2000) : 'niet gevonden',
+      allTables: document.querySelectorAll('table').length,
+      bodyText: document.body.innerText.substring(0, 1000)
+    };
   });
 
-  fs.writeFileSync('standings.json', JSON.stringify(standings, null, 2));
-  console.log('Done:', standings);
+  fs.writeFileSync('standings.json', JSON.stringify(result, null, 2));
+  console.log('Result:', result);
 
   await browser.close();
 })();
