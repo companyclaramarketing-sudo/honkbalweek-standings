@@ -13,21 +13,27 @@ const fs = require('fs');
     { waitUntil: 'networkidle2', timeout: 30000 }
   );
 
-  await page.waitForSelector('table', { timeout: 15000 });
+  await page.waitForSelector('.standings-print', { timeout: 15000 });
 
   const standings = await page.evaluate(() => {
-    const rows = document.querySelectorAll('table tbody tr');
-    return Array.from(rows).map(row => {
+    const rows = document.querySelectorAll('.standings-print tbody tr:not(:first-child)');
+    return Array.from(rows).map((row, i) => {
       const cells = row.querySelectorAll('td');
+      const vlag = row.querySelector('img')?.src || '';
+      const code = row.querySelector('.team-name')?.childNodes[0]?.textContent?.trim() || '';
+      const naam = row.querySelector('.team-name small')?.innerText?.trim() || '';
       return {
-        positie: cells[0]?.innerText?.trim(),
-        team:    cells[1]?.innerText?.trim(),
-        w:       cells[2]?.innerText?.trim(),
-        l:       cells[3]?.innerText?.trim(),
-        t:       cells[4]?.innerText?.trim(),
-        pct:     cells[5]?.innerText?.trim(),
+        positie: i + 1,
+        code,
+        naam,
+        vlag,
+        w:   cells[3]?.innerText?.trim(),
+        l:   cells[4]?.innerText?.trim(),
+        t:   cells[5]?.innerText?.trim(),
+        pct: cells[6]?.innerText?.trim(),
+        gb:  cells[7]?.innerText?.trim(),
       };
-    }).filter(r => r.team);
+    }).filter(r => r.naam);
   });
 
   fs.writeFileSync('standings.json', JSON.stringify(standings, null, 2));
