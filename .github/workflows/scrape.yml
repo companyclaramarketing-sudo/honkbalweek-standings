@@ -8,30 +8,47 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 20
 
-      - name: Install puppeteer
+      - name: Install dependencies
         run: npm install puppeteer
 
       - name: Run scraper
         run: node scrape.js
 
-      - name: Commit standings.json
+      - name: Debug output
+        run: |
+          echo "📁 FILES:"
+          ls -la
+
+          echo "📄 CONTENT:"
+          cat standings.json || echo "NO FILE FOUND"
+
+      - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
+
+          if [ ! -f standings.json ]; then
+            echo "❌ standings.json ontbreekt"
+            exit 1
+          fi
+
           git add standings.json
-          git stash
-          git pull --rebase
-          git stash pop
-          git diff --staged --quiet || git commit -m "Update standings $(date -u)"
+
+          if git diff --cached --quiet; then
+            echo "ℹ️ Geen wijzigingen"
+            exit 0
+          fi
+
+          git commit -m "Update standings $(date -u)"
           git push
