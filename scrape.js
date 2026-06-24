@@ -16,50 +16,39 @@ const fs = require('fs');
   const page = await browser.newPage();
 
   try {
-    console.log("📡 Pagina openen...");
-
     await page.goto(
       'https://stats.knbsbstats.nl/en/events/2026-honkbalweek-haarlem/standings',
       { waitUntil: 'domcontentloaded', timeout: 60000 }
     );
 
-    console.log("⏳ Wachten op tabel...");
-
-    await page.waitForSelector('.standings-print', { timeout: 60000 });
-
-    console.log("📊 Data extraheren...");
+    await page.waitForSelector('.standings-print');
 
     const result = await page.evaluate(() => {
-      const table = document.querySelector('.standings-print');
-
-      const rows = [...table.querySelectorAll('tbody tr')]
-        .filter(row => row.innerText && row.innerText.trim().length > 0);
+      const rows = [...document.querySelectorAll('.standings-print tbody tr')];
 
       const standings = [];
 
       for (const row of rows) {
-        const cells = [...row.querySelectorAll('td, th')]
-          .map(c => (c.innerText || '').replace(/\s+/g, ' ').trim());
+        const codeEl = row.querySelector('.team-name');
 
-        // skip lege of header-achtige rijen
-        if (cells.length < 6) continue;
+        const teamCode = codeEl?.childNodes?.[0]?.textContent?.trim();
+        const teamName = codeEl?.querySelector('small')?.textContent?.trim();
 
-        const teamCode = cells[0];
-        const team = cells[1];
+        const cells = [...row.querySelectorAll('td')].map(td =>
+          td.innerText.trim()
+        );
 
-        // skip header/invalid rows
-        if (!team || team.toLowerCase().includes('team') || team.toLowerCase().includes('#')) {
-          continue;
-        }
+        // skip header row
+        if (!teamCode || teamCode === '#') continue;
 
         standings.push({
-          teamCode: teamCode || null,
-          team: team || null,
-          wins: Number(cells[2]) || 0,
-          losses: Number(cells[3]) || 0,
-          ties: Number(cells[4]) || 0,
-          pct: cells[5] || null,
-          gb: cells[6] || null
+          teamCode,
+          team: teamName,
+          wins: Number(cells[3]) || 0,
+          losses: Number(cells[4]) || 0,
+          ties: Number(cells[5]) || 0,
+          pct: cells[6] || null,
+          gb: cells[7] || null
         });
       }
 
@@ -69,22 +58,17 @@ const fs = require('fs');
       };
     });
 
-    console.log("💾 Writing file...");
-
     fs.writeFileSync(
       'standings.json',
       JSON.stringify(result, null, 2)
     );
 
-    console.log("✅ Klaar!");
+    console.log("✅ Klaar:", result);
 
   } catch (err) {
     console.error("❌ ERROR:", err);
 
-    fs.writeFileSync(
-      'debug.html',
-      await page.content()
-    );
+    fs.writeFileSync('debug.html', await page.content());
 
     process.exit(1);
   } finally {
