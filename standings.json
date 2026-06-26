@@ -1,14 +1,23 @@
 {
-  "updatedAt": "2026-06-26T17:22:20.776Z",
+  "updatedAt": "2026-06-26T21:51:40.706Z",
   "standings": [
+    {
+      "teamCode": "NED",
+      "team": "Netherlands",
+      "wins": 1,
+      "losses": 0,
+      "ties": 0,
+      "pct": "1.000",
+      "gb": "0"
+    },
     {
       "teamCode": "CUW",
       "team": "Curaçao",
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "pct": null,
-      "gb": "0"
+      "pct": ".000",
+      "gb": "0.5"
     },
     {
       "teamCode": "CZE",
@@ -16,17 +25,8 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "pct": null,
-      "gb": "0"
-    },
-    {
-      "teamCode": "GLO",
-      "team": "International Globetrotters",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "pct": null,
-      "gb": "0"
+      "pct": ".000",
+      "gb": "0.5"
     },
     {
       "teamCode": "ITA",
@@ -34,17 +34,8 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "pct": null,
-      "gb": "0"
-    },
-    {
-      "teamCode": "NED",
-      "team": "Netherlands",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "pct": null,
-      "gb": "0"
+      "pct": ".000",
+      "gb": "0.5"
     },
     {
       "teamCode": "TPE",
@@ -52,8 +43,17 @@
       "wins": 0,
       "losses": 0,
       "ties": 0,
-      "pct": null,
-      "gb": "0"
+      "pct": ".000",
+      "gb": "0.5"
+    },
+    {
+      "teamCode": "GLO",
+      "team": "International Globetrotters",
+      "wins": 0,
+      "losses": 1,
+      "ties": 0,
+      "pct": ".000",
+      "gb": "1"
     }
   ]
 }
