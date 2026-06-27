@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T12:56:13.057Z",
+  "updatedAt": "2026-06-27T16:48:02.832Z",
   "standings": [
     {
       "teamCode": "NED",
@@ -11,21 +11,21 @@
       "gb": "0"
     },
     {
-      "teamCode": "CUW",
-      "team": "Curaçao",
-      "wins": 0,
+      "teamCode": "TPE",
+      "team": "Chinese Taipei",
+      "wins": 1,
       "losses": 0,
       "ties": 0,
-      "pct": ".000",
-      "gb": "0.5"
+      "pct": "1.000",
+      "gb": "0"
     },
     {
-      "teamCode": "CZE",
-      "team": "Czechia",
-      "wins": 0,
-      "losses": 0,
+      "teamCode": "GLO",
+      "team": "International Globetrotters",
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
-      "pct": ".000",
+      "pct": ".500",
       "gb": "0.5"
     },
     {
@@ -38,17 +38,17 @@
       "gb": "0.5"
     },
     {
-      "teamCode": "TPE",
-      "team": "Chinese Taipei",
+      "teamCode": "CUW",
+      "team": "Curaçao",
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
       "pct": ".000",
-      "gb": "0.5"
+      "gb": "1"
     },
     {
-      "teamCode": "GLO",
-      "team": "International Globetrotters",
+      "teamCode": "CZE",
+      "team": "Czechia",
       "wins": 0,
       "losses": 1,
       "ties": 0,
