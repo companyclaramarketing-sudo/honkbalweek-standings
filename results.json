@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T14:27:11.263Z",
+  "updatedAt": "2026-06-28T15:00:22.630Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -110,7 +110,7 @@
         "code": "NED",
         "name": "Netherlands",
         "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
-        "score": "0"
+        "score": "3"
       },
       "home": {
         "code": "TPE",
