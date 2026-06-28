@@ -1,56 +1,23 @@
 {
-  "updatedAt": "2026-06-28T13:28:10.410Z",
+  "updatedAt": "2026-06-28T13:34:23.052Z",
   "results": [
     {
-      "round": "#6 - Opening Round",
-      "datetime": "Pim Mulier Stadion, Haarlem",
-      "visitor": {
-        "code": "ITA",
-        "name": "Italy",
-        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg"
-      },
-      "home": {
-        "code": "GLO",
-        "name": "International Globetrotters",
-        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png"
-      },
-      "visitorScore": "VISITOR",
-      "homeScore": null,
-      "status": "Final"
-    },
-    {
-      "round": "#7 - Opening Round",
-      "datetime": "Pim Mulier Stadion, Haarlem",
-      "visitor": {
-        "code": "NED",
-        "name": "Netherlands",
-        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg"
-      },
-      "home": {
-        "code": "TPE",
-        "name": "Chinese Taipei",
-        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg"
-      },
-      "visitorScore": "VISITOR",
-      "homeScore": null,
-      "status": "Live"
-    },
-    {
-      "round": "#8 - Opening Round",
-      "datetime": "Pim Mulier Stadion, Haarlem",
-      "visitor": {
-        "code": "CUW",
-        "name": "Curaçao",
-        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg"
-      },
-      "home": {
-        "code": "CZE",
-        "name": "Czechia",
-        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg"
-      },
-      "visitorScore": "VISITOR",
-      "homeScore": null,
-      "status": "Stand by"
+      "gameid": "188964",
+      "tournamentid": "3487",
+      "inning": "T1 INN",
+      "homeruns": "0",
+      "awayruns": "0",
+      "balls": "0",
+      "strikes": "2",
+      "outs": "0",
+      "runner1": "0",
+      "runner2": "0",
+      "runner3": "0",
+      "pitcher": "KUO TZU-CHUAN",
+      "batter": "SELASSA Delano",
+      "status": "1",
+      "start": "2026-06-28 15:00:00",
+      "start_tz": "Europe/Amsterdam"
     }
   ]
 }
