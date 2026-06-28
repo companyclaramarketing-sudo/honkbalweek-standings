@@ -1,23 +1,362 @@
 {
-  "updatedAt": "2026-06-28T13:34:23.052Z",
+  "updatedAt": "2026-06-28T13:41:22.736Z",
   "results": [
     {
-      "gameid": "188964",
-      "tournamentid": "3487",
-      "inning": "T1 INN",
-      "homeruns": "0",
-      "awayruns": "0",
-      "balls": "0",
-      "strikes": "2",
-      "outs": "0",
-      "runner1": "0",
-      "runner2": "0",
-      "runner3": "0",
-      "pitcher": "KUO TZU-CHUAN",
-      "batter": "SELASSA Delano",
-      "status": "1",
-      "start": "2026-06-28 15:00:00",
-      "start_tz": "Europe/Amsterdam"
+      "datum": "2026-06-26",
+      "tijd": "6/26/2026, 13:00",
+      "visitor": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "status": "Postponed"
+    },
+    {
+      "datum": "2026-06-26",
+      "tijd": "6/26/2026, 17:30",
+      "visitor": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "1"
+      },
+      "home": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "6"
+      },
+      "status": "Final"
+    },
+    {
+      "datum": "2026-06-27",
+      "tijd": "6/27/2026, 09:30",
+      "visitor": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "2"
+      },
+      "home": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "3"
+      },
+      "status": "F/10"
+    },
+    {
+      "datum": "2026-06-27",
+      "tijd": "6/27/2026, 13:00",
+      "visitor": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "3"
+      },
+      "home": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "4"
+      },
+      "status": "Final"
+    },
+    {
+      "datum": "2026-06-27",
+      "tijd": "6/27/2026, 17:30",
+      "visitor": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "2"
+      },
+      "status": "F/8"
+    },
+    {
+      "datum": "2026-06-28",
+      "tijd": "6/28/2026, 09:30",
+      "visitor": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "3"
+      },
+      "home": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "1"
+      },
+      "status": "Final"
+    },
+    {
+      "datum": "2026-06-28",
+      "tijd": "6/28/2026, 13:00",
+      "visitor": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "status": "Live"
+    },
+    {
+      "datum": "2026-06-28",
+      "tijd": "6/28/2026, 17:30",
+      "visitor": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-06-29",
+      "tijd": "6/29/2026, 13:00",
+      "visitor": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-06-29",
+      "tijd": "6/29/2026, 17:30",
+      "visitor": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-06-30",
+      "tijd": "6/30/2026, 09:30",
+      "visitor": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-06-30",
+      "tijd": "6/30/2026, 13:00",
+      "visitor": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-06-30",
+      "tijd": "6/30/2026, 17:30",
+      "visitor": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-01",
+      "tijd": "7/1/2026, 09:30",
+      "visitor": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-01",
+      "tijd": "7/1/2026, 13:30",
+      "visitor": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "0"
+      },
+      "home": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-01",
+      "tijd": "7/1/2026, 17:30",
+      "visitor": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-02",
+      "tijd": "7/2/2026, 13:00",
+      "visitor": {
+        "code": "#4",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "home": {
+        "code": "#3",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-02",
+      "tijd": "7/2/2026, 17:30",
+      "visitor": {
+        "code": "#2",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "home": {
+        "code": "#1",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-03",
+      "tijd": "7/3/2026, 13:00",
+      "visitor": {
+        "code": "#6",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "home": {
+        "code": "#5",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-03",
+      "tijd": "7/3/2026, 17:30",
+      "visitor": {
+        "code": "W 16",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "home": {
+        "code": "L 17",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-04",
+      "tijd": "7/4/2026, 13:00",
+      "visitor": {
+        "code": "W 19",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "home": {
+        "code": "W 17",
+        "name": "",
+        "flag": "",
+        "score": "0"
+      },
+      "status": "Stand by"
     }
   ]
 }
