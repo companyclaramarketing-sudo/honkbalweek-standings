@@ -1,54 +1,46 @@
 name: Scrape Standings
-
 on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Install dependencies
         run: npm install puppeteer
-
       - name: Run scraper
         run: node scrape.js
-
       - name: Debug output
         run: |
           echo "📁 FILES:"
           ls -la
-
-          echo "📄 CONTENT:"
+          echo "📄 STANDINGS:"
           cat standings.json || echo "NO FILE FOUND"
-
+          echo "📄 RESULTS:"
+          cat results.json || echo "NO FILE FOUND"
       - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-
           if [ ! -f standings.json ]; then
             echo "❌ standings.json ontbreekt"
             exit 1
           fi
-
-          git add standings.json
-
+          if [ ! -f results.json ]; then
+            echo "❌ results.json ontbreekt"
+            exit 1
+          fi
+          git add standings.json results.json
           if git diff --cached --quiet; then
             echo "ℹ️ Geen wijzigingen"
             exit 0
           fi
-
-          git commit -m "Update standings $(date -u)"
+          git commit -m "Update standings en results $(date -u)"
           git push
