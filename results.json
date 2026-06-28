@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T15:02:07.200Z",
+  "updatedAt": "2026-06-28T17:53:00.735Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -110,15 +110,15 @@
         "code": "NED",
         "name": "Netherlands",
         "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
-        "score": "3"
+        "score": "15"
       },
       "home": {
         "code": "TPE",
         "name": "Chinese Taipei",
         "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
-        "score": "1"
+        "score": "4"
       },
-      "status": "Live"
+      "status": "Final"
     },
     {
       "datum": "2026-06-28",
@@ -135,7 +135,7 @@
         "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
         "score": "0"
       },
-      "status": "Stand by"
+      "status": "Live"
     },
     {
       "datum": "2026-06-29",

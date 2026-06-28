@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T15:01:43.675Z",
+  "updatedAt": "2026-06-28T17:52:37.366Z",
   "standings": [
     {
       "teamCode": "ITA",
@@ -11,17 +11,17 @@
       "gb": "0"
     },
     {
-      "teamCode": "TPE",
-      "team": "Chinese Taipei",
-      "wins": 1,
-      "losses": 0,
+      "teamCode": "NED",
+      "team": "Netherlands",
+      "wins": 2,
+      "losses": 1,
       "ties": 0,
-      "pct": "1.000",
+      "pct": ".667",
       "gb": "0.5"
     },
     {
-      "teamCode": "NED",
-      "team": "Netherlands",
+      "teamCode": "TPE",
+      "team": "Chinese Taipei",
       "wins": 1,
       "losses": 1,
       "ties": 0,
