@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T13:41:22.736Z",
+  "updatedAt": "2026-06-28T13:56:56.489Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -116,7 +116,7 @@
         "code": "TPE",
         "name": "Chinese Taipei",
         "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
-        "score": "0"
+        "score": "1"
       },
       "status": "Live"
     },
