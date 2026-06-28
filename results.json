@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T18:57:03.920Z",
+  "updatedAt": "2026-06-28T22:43:10.797Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -127,15 +127,15 @@
         "code": "CUW",
         "name": "Curaçao",
         "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
-        "score": "0"
+        "score": "12"
       },
       "home": {
         "code": "CZE",
         "name": "Czechia",
         "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
-        "score": "0"
+        "score": "2"
       },
-      "status": "Live"
+      "status": "Final"
     },
     {
       "datum": "2026-06-29",

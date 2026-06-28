@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T18:56:40.292Z",
+  "updatedAt": "2026-06-28T22:42:47.407Z",
   "standings": [
     {
       "teamCode": "ITA",
@@ -20,6 +20,15 @@
       "gb": "0.5"
     },
     {
+      "teamCode": "CUW",
+      "team": "Curaçao",
+      "wins": 1,
+      "losses": 1,
+      "ties": 0,
+      "pct": ".500",
+      "gb": "1"
+    },
+    {
       "teamCode": "TPE",
       "team": "Chinese Taipei",
       "wins": 1,
@@ -38,22 +47,13 @@
       "gb": "1.5"
     },
     {
-      "teamCode": "CUW",
-      "team": "Curaçao",
-      "wins": 0,
-      "losses": 1,
-      "ties": 0,
-      "pct": ".000",
-      "gb": "1.5"
-    },
-    {
       "teamCode": "CZE",
       "team": "Czechia",
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
       "pct": ".000",
-      "gb": "1.5"
+      "gb": "2"
     }
   ]
 }
