@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-06-27T20:41:57.566Z",
+  "updatedAt": "2026-06-28T07:30:03.274Z",
   "standings": [
     {
-      "teamCode": "NED",
-      "team": "Netherlands",
+      "teamCode": "ITA",
+      "team": "Italy",
       "wins": 1,
       "losses": 0,
       "ties": 0,
@@ -29,12 +29,12 @@
       "gb": "0.5"
     },
     {
-      "teamCode": "ITA",
-      "team": "Italy",
-      "wins": 0,
-      "losses": 0,
+      "teamCode": "NED",
+      "team": "Netherlands",
+      "wins": 1,
+      "losses": 1,
       "ties": 0,
-      "pct": ".000",
+      "pct": ".500",
       "gb": "0.5"
     },
     {
