@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T14:38:00.457Z",
+  "updatedAt": "2026-06-29T21:10:51.025Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -144,7 +144,7 @@
         "code": "CZE",
         "name": "Czechia",
         "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
-        "score": "0"
+        "score": "1"
       },
       "home": {
         "code": "TPE",
@@ -152,7 +152,7 @@
         "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
         "score": "0"
       },
-      "status": "Live"
+      "status": "Final"
     },
     {
       "datum": "2026-06-29",
@@ -161,15 +161,15 @@
         "code": "ITA",
         "name": "Italy",
         "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
-        "score": "0"
+        "score": "11"
       },
       "home": {
         "code": "CUW",
         "name": "Curaçao",
         "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
-        "score": "0"
+        "score": "3"
       },
-      "status": "Stand by"
+      "status": "Final"
     },
     {
       "datum": "2026-06-30",
@@ -241,7 +241,7 @@
     },
     {
       "datum": "2026-07-01",
-      "tijd": "7/1/2026, 13:30",
+      "tijd": "7/1/2026, 13:00",
       "visitor": {
         "code": "GLO",
         "name": "International Globetrotters",
