@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T22:43:10.797Z",
+  "updatedAt": "2026-06-29T14:38:00.457Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -152,7 +152,7 @@
         "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
         "score": "0"
       },
-      "status": "Stand by"
+      "status": "Live"
     },
     {
       "datum": "2026-06-29",
