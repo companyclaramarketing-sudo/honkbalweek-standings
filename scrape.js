@@ -55,7 +55,6 @@ const fs = require('fs');
 
     // ══════════════════════════
     // UITSLAGEN — alleen vandaag via WordPress proxy
-    // Historische data blijft in results.json staan
     // ══════════════════════════
     await page.goto(
       'https://honkbalweek.nl/wp-admin/admin-ajax.php?action=hwh_results',
@@ -103,15 +102,16 @@ const fs = require('fs');
     console.log(`✅ Vandaag (${vandaag}): ${nieuweWedstrijden.length} wedstrijden gevonden`);
 
     // Lees bestaande results.json
-    let bestaand = { updatedAt: new Date().toISOString(), results: [] };
+    let bestaandeResults = [];
     try {
-      bestaand = JSON.parse(fs.readFileSync('results.json', 'utf8'));
+      const raw = JSON.parse(fs.readFileSync('results.json', 'utf8'));
+      bestaandeResults = Array.isArray(raw.results) ? raw.results : [];
     } catch(e) {
       console.log('Geen bestaande results.json gevonden, nieuw bestand aanmaken');
     }
 
-    // Verwijder huidige dag uit bestaande data en voeg nieuwe toe
-    const oudeWedstrijden = bestaand.results.filter(w => w.datum !== vandaag);
+    // Verwijder huidige dag en voeg nieuwe toe
+    const oudeWedstrijden = bestaandeResults.filter(w => w.datum !== vandaag);
     const alleWedstrijden = [...oudeWedstrijden, ...nieuweWedstrijden];
 
     // Sorteer op datum
