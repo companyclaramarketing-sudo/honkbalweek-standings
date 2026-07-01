@@ -22,8 +22,7 @@ const fs = require('fs');
       { waitUntil: 'domcontentloaded', timeout: 60000 }
     );
 
-    // Extra wacht voor JS te laden
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 10000));
 
     await page.waitForSelector('.standings-print', { timeout: 30000 });
 
@@ -60,8 +59,7 @@ const fs = require('fs');
       { waitUntil: 'domcontentloaded', timeout: 60000 }
     );
 
-    // Extra wacht voor JS te laden
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 10000));
 
     await page.waitForSelector('.date-picker', { timeout: 30000 });
 
@@ -92,7 +90,6 @@ const fs = require('fs');
         }
       }, datum);
 
-      // Iets langer wachten per dag
       await new Promise(r => setTimeout(r, 3500));
 
       const wedstrijden = await page.evaluate((datum) => {
