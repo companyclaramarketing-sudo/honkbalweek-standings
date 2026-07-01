@@ -1,11 +1,56 @@
 {
-  "updatedAt": "2026-07-01T10:00:00.000Z",
-  "standings": [
-    { "teamCode": "ITA", "team": "Italy", "wins": 4, "losses": 0, "ties": 0, "pct": "1.000", "gb": "0" },
-    { "teamCode": "NED", "team": "Netherlands", "wins": 3, "losses": 1, "ties": 0, "pct": ".750", "gb": "1" },
-    { "teamCode": "TPE", "team": "Chinese Taipei", "wins": 2, "losses": 2, "ties": 0, "pct": ".500", "gb": "2" },
-    { "teamCode": "CUW", "team": "Curaçao", "wins": 1, "losses": 3, "ties": 0, "pct": ".250", "gb": "3" },
-    { "teamCode": "CZE", "team": "Czechia", "wins": 1, "losses": 3, "ties": 0, "pct": ".250", "gb": "3" },
-    { "teamCode": "GLO", "team": "International Globetrotters", "wins": 1, "losses": 3, "ties": 0, "pct": ".250", "gb": "3" }
+  "updatedAt": "2026-07-01T09:41:55.054Z",
+  "results": [
+    {
+      "datum": "2026-07-01",
+      "tijd": "7/1/2026, 09:30",
+      "visitor": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "status": "Live"
+    },
+    {
+      "datum": "2026-07-01",
+      "tijd": "7/1/2026, 13:00",
+      "visitor": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "0"
+      },
+      "home": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-01",
+      "tijd": "7/1/2026, 17:30",
+      "visitor": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    }
   ]
 }
