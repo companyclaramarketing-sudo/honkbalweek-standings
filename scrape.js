@@ -21,7 +21,11 @@ const fs = require('fs');
       'https://stats.knbsbstats.nl/en/events/2026-honkbalweek-haarlem/standings',
       { waitUntil: 'domcontentloaded', timeout: 60000 }
     );
-    await page.waitForSelector('.standings-print');
+
+    // Extra wacht voor JS te laden
+    await new Promise(r => setTimeout(r, 5000));
+
+    await page.waitForSelector('.standings-print', { timeout: 30000 });
 
     const standingsResult = await page.evaluate(() => {
       const rows = [...document.querySelectorAll('.standings-print tbody tr')];
@@ -55,11 +59,12 @@ const fs = require('fs');
       'https://stats.knbsbstats.nl/en/events/2026-honkbalweek-haarlem/schedule-and-results',
       { waitUntil: 'domcontentloaded', timeout: 60000 }
     );
-    await page.waitForSelector('.date-picker', { timeout: 15000 });
 
-    // Ga naar 26 juni — begin van het toernooi
-    // Eerst teruggaan naar het begin via de vorige knop
-    // De pagina opent standaard op vandaag — we navigeren naar 26 juni
+    // Extra wacht voor JS te laden
+    await new Promise(r => setTimeout(r, 5000));
+
+    await page.waitForSelector('.date-picker', { timeout: 30000 });
+
     const toernooidagen = [
       '2026-06-26',
       '2026-06-27',
@@ -77,7 +82,6 @@ const fs = require('fs');
     for (const datum of toernooidagen) {
       console.log(`📅 Ophalen: ${datum}`);
 
-      // Stel de datum in via de input
       await page.evaluate((d) => {
         const input = document.querySelector('input[name="date"]');
         if (input) {
@@ -88,8 +92,8 @@ const fs = require('fs');
         }
       }, datum);
 
-      // Wacht op nieuwe wedstrijden
-      await new Promise(r => setTimeout(r, 2500));
+      // Iets langer wachten per dag
+      await new Promise(r => setTimeout(r, 3500));
 
       const wedstrijden = await page.evaluate((datum) => {
         const items = document.querySelectorAll('.schedule-item');
