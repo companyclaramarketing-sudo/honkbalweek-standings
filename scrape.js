@@ -54,7 +54,8 @@ const fs = require('fs');
     console.log("✅ Standings klaar:", standingsResult.standings.length, "teams");
 
     // ══════════════════════════
-    // UITSLAGEN via WordPress proxy
+    // UITSLAGEN — alleen vandaag via WordPress proxy
+    // Historische data blijft in results.json staan
     // ══════════════════════════
     await page.goto(
       'https://honkbalweek.nl/wp-admin/admin-ajax.php?action=hwh_results',
@@ -63,72 +64,58 @@ const fs = require('fs');
 
     await new Promise(r => setTimeout(r, 5000));
 
-    await page.waitForSelector('.date-picker', { timeout: 30000 });
+    await page.waitForSelector('.schedule-item', { timeout: 30000 });
 
-    const toernooidagen = [
-      '2026-06-26',
-      '2026-06-27',
-      '2026-06-28',
-      '2026-06-29',
-      '2026-06-30',
-      '2026-07-01',
-      '2026-07-02',
-      '2026-07-03',
-      '2026-07-04',
-    ];
+    const vandaag = new Date().toISOString().split('T')[0];
 
-    const alleWedstrijden = [];
+    const nieuweWedstrijden = await page.evaluate((datum) => {
+      const items = document.querySelectorAll('.schedule-item');
+      return Array.from(items).map(item => {
+        const scoreEl = item.querySelector('.baseball-score-bug > div:nth-child(2) > p:first-child');
+        const scoreText = scoreEl?.innerText?.trim() || '';
+        const scoreParts = scoreText.split(':').map(s => s.trim());
+        const visitorScore = (scoreParts[0] && scoreParts[0] !== 'VISITOR') ? scoreParts[0] : null;
+        const homeScore = (scoreParts[1] && scoreParts[1] !== 'HOME') ? scoreParts[1] : null;
 
-    for (const datum of toernooidagen) {
-      console.log(`📅 Ophalen: ${datum}`);
+        const timeEl = item.querySelector('.box-score-link:first-child div:last-child p:last-child');
+        const time = timeEl?.innerText?.trim() || '';
 
-      await page.evaluate((d) => {
-        const input = document.querySelector('input[name="date"]');
-        if (input) {
-          const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-          nativeInputValueSetter.call(input, d);
-          input.dispatchEvent(new Event('input', { bubbles: true }));
-          input.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      }, datum);
+        return {
+          datum,
+          tijd: time,
+          visitor: {
+            code: item.querySelector('.team-info:first-child .code strong')?.innerText?.trim() || '',
+            name: item.querySelector('.team-info:first-child p:not(.dugout):not(.code):not(.group)')?.innerText?.trim() || '',
+            flag: item.querySelector('.team-info:first-child img')?.src || '',
+            score: visitorScore
+          },
+          home: {
+            code: item.querySelector('.team-info:last-child .code strong')?.innerText?.trim() || '',
+            name: item.querySelector('.team-info:last-child p:not(.dugout):not(.code):not(.group)')?.innerText?.trim() || '',
+            flag: item.querySelector('.team-info:last-child img')?.src || '',
+            score: homeScore
+          },
+          status: item.querySelector('.game-label p strong')?.innerText?.trim() || ''
+        };
+      }).filter(w => w.visitor.code);
+    }, vandaag);
 
-      await new Promise(r => setTimeout(r, 3500));
+    console.log(`✅ Vandaag (${vandaag}): ${nieuweWedstrijden.length} wedstrijden gevonden`);
 
-      const wedstrijden = await page.evaluate((datum) => {
-        const items = document.querySelectorAll('.schedule-item');
-        return Array.from(items).map(item => {
-          const scoreEl = item.querySelector('.baseball-score-bug > div:nth-child(2) > p:first-child');
-          const scoreText = scoreEl?.innerText?.trim() || '';
-          const scoreParts = scoreText.split(':').map(s => s.trim());
-          const visitorScore = (scoreParts[0] && scoreParts[0] !== 'VISITOR') ? scoreParts[0] : null;
-          const homeScore = (scoreParts[1] && scoreParts[1] !== 'HOME') ? scoreParts[1] : null;
-
-          const timeEl = item.querySelector('.box-score-link:first-child div:last-child p:last-child');
-          const time = timeEl?.innerText?.trim() || '';
-
-          return {
-            datum,
-            tijd: time,
-            visitor: {
-              code: item.querySelector('.team-info:first-child .code strong')?.innerText?.trim() || '',
-              name: item.querySelector('.team-info:first-child p:not(.dugout):not(.code):not(.group)')?.innerText?.trim() || '',
-              flag: item.querySelector('.team-info:first-child img')?.src || '',
-              score: visitorScore
-            },
-            home: {
-              code: item.querySelector('.team-info:last-child .code strong')?.innerText?.trim() || '',
-              name: item.querySelector('.team-info:last-child p:not(.dugout):not(.code):not(.group)')?.innerText?.trim() || '',
-              flag: item.querySelector('.team-info:last-child img')?.src || '',
-              score: homeScore
-            },
-            status: item.querySelector('.game-label p strong')?.innerText?.trim() || ''
-          };
-        }).filter(w => w.visitor.code);
-      }, datum);
-
-      console.log(`  → ${wedstrijden.length} wedstrijden gevonden`);
-      alleWedstrijden.push(...wedstrijden);
+    // Lees bestaande results.json
+    let bestaand = { updatedAt: new Date().toISOString(), results: [] };
+    try {
+      bestaand = JSON.parse(fs.readFileSync('results.json', 'utf8'));
+    } catch(e) {
+      console.log('Geen bestaande results.json gevonden, nieuw bestand aanmaken');
     }
+
+    // Verwijder huidige dag uit bestaande data en voeg nieuwe toe
+    const oudeWedstrijden = bestaand.results.filter(w => w.datum !== vandaag);
+    const alleWedstrijden = [...oudeWedstrijden, ...nieuweWedstrijden];
+
+    // Sorteer op datum
+    alleWedstrijden.sort((a, b) => a.datum.localeCompare(b.datum));
 
     fs.writeFileSync('results.json', JSON.stringify({
       updatedAt: new Date().toISOString(),
