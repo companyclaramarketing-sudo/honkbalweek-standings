@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T16:31:27.055Z",
+  "updatedAt": "2026-07-02T20:45:05.789Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -286,9 +286,9 @@
         "code": "ITA",
         "name": "Italy",
         "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
-        "score": "0"
+        "score": "1"
       },
-      "status": "Stand by"
+      "status": "Final"
     }
   ]
 }
