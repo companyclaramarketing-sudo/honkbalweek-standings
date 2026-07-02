@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T22:46:51.211Z",
+  "updatedAt": "2026-07-02T10:16:46.533Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -255,6 +255,40 @@
         "score": "4"
       },
       "status": "Final"
+    },
+    {
+      "datum": "2026-07-02",
+      "tijd": "7/2/2026, 13:00",
+      "visitor": {
+        "code": "CUW",
+        "name": "Curaçao",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-02",
+      "tijd": "7/2/2026, 17:30",
+      "visitor": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
     }
   ]
 }
