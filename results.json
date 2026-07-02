@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T10:16:46.533Z",
+  "updatedAt": "2026-07-02T16:31:27.055Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -263,15 +263,15 @@
         "code": "CUW",
         "name": "Curaçao",
         "flag": "https://static.wbsc.org/assets/flags/ioc/CUW.svg",
-        "score": "0"
+        "score": "2"
       },
       "home": {
         "code": "TPE",
         "name": "Chinese Taipei",
         "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
-        "score": "0"
+        "score": "5"
       },
-      "status": "Stand by"
+      "status": "Final"
     },
     {
       "datum": "2026-07-02",
