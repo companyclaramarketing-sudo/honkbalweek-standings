@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T20:45:05.789Z",
+  "updatedAt": "2026-07-03T08:38:35.973Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -289,6 +289,40 @@
         "score": "1"
       },
       "status": "Final"
+    },
+    {
+      "datum": "2026-07-03",
+      "tijd": "7/3/2026, 13:00",
+      "visitor": {
+        "code": "CZE",
+        "name": "Czechia",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "GLO",
+        "name": "International Globetrotters",
+        "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
+        "score": "0"
+      },
+      "status": "Stand by"
+    },
+    {
+      "datum": "2026-07-03",
+      "tijd": "7/3/2026, 17:30",
+      "visitor": {
+        "code": "TPE",
+        "name": "Chinese Taipei",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/TPE.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
     }
   ]
 }
