@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T08:38:35.973Z",
+  "updatedAt": "2026-07-03T15:59:23.272Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -297,15 +297,15 @@
         "code": "CZE",
         "name": "Czechia",
         "flag": "https://static.wbsc.org/assets/flags/ioc/CZE.svg",
-        "score": "0"
+        "score": "6"
       },
       "home": {
         "code": "GLO",
         "name": "International Globetrotters",
         "flag": "https://static.wbsc.org/upload/0eb3375b-54f0-d73c-fdee-90d115cbe8d9.png",
-        "score": "0"
+        "score": "5"
       },
-      "status": "Stand by"
+      "status": "Live"
     },
     {
       "datum": "2026-07-03",
