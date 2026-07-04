@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T20:21:59.752Z",
+  "updatedAt": "2026-07-04T00:17:25.901Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -323,6 +323,23 @@
         "score": "9"
       },
       "status": "Live"
+    },
+    {
+      "datum": "2026-07-04",
+      "tijd": "7/4/2026, 13:00",
+      "visitor": {
+        "code": "NED",
+        "name": "Netherlands",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
+        "score": "0"
+      },
+      "home": {
+        "code": "ITA",
+        "name": "Italy",
+        "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
+        "score": "0"
+      },
+      "status": "Stand by"
     }
   ]
 }
