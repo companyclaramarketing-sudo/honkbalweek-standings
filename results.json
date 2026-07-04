@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T09:29:51.023Z",
+  "updatedAt": "2026-07-04T14:47:51.603Z",
   "results": [
     {
       "datum": "2026-06-26",
@@ -331,15 +331,15 @@
         "code": "NED",
         "name": "Netherlands",
         "flag": "https://static.wbsc.org/assets/flags/ioc/NED.svg",
-        "score": "0"
+        "score": "2"
       },
       "home": {
         "code": "ITA",
         "name": "Italy",
         "flag": "https://static.wbsc.org/assets/flags/ioc/ITA.svg",
-        "score": "0"
+        "score": "1"
       },
-      "status": "Stand by"
+      "status": "Live"
     }
   ]
 }
